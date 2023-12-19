@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
         <!-- Navigation Bar -->
         <nav>
-            <ul>
+            <div class="nav-brand">
+                <a href="index.html">Shubham Bhalala</a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -23,7 +27,14 @@
     </main>
     <footer>
         <!-- Footer content -->
+        <p>Made with <span>&#10084;</span> by Shubham Bhalala using ChatGPT.</p>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+        console.log('callback - particles.js config loaded');
+      });
+    </script>
 </body>
 </html>

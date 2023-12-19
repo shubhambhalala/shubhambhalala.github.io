@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
@@ -14,10 +14,34 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    /*background-color: #333;*/
     color: #fff;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 nav ul {
@@ -35,14 +59,48 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Navigation Link Hover Effect */
+.nav-links a {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover, .nav-links a:active {
+    color: #007bff; /* Highlight color */
+    transform: translateY(-5px); /* Rise effect on hover */
+}
+
+/* Click Animation */
+.nav-links a:active {
+    transform: translateY(0); /* Fall back to place on click */
+}
+
+/* Styling for 'Shubham Bhalala' link */
+.nav-brand a {
+    color: #fff; /* Set the color to white, or any color you prefer */
+    text-decoration: none; /* Removes the underline */
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-brand a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Glowing effect */
+    transform: scale(1.1); /* Slightly enlarges the text */
+}
+
+.nav-brand a:hover, .nav-brand a:active {
+    transform: translateY(-5px); /* Rise effect on hover */
+}
+
 /* Main Content */
 main {
+    background-color: rgba(255, 255, 255, 0.1); /* very transparent white */
     padding: 20px;
 }
 
 /* Footer */
+/* Footer */
 footer {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    /*background-color: #333;*/
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -50,6 +108,16 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+footer p {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+footer span {
+    color: red; /* Gives the heart emoji a red color */
+}
+
 
 /* Utility Classes */
 .container {
@@ -59,7 +127,8 @@ footer {
 }
 
 .card {
-    background-color: #222;
+    background-color: rgba(255, 255, 255, 0.1); /* very transparent white */
+    /*background-color: #222;*/
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -88,4 +157,15 @@ footer {
     .container {
         width: 90%;
     }
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Or any background color you want */
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1; /* Ensure it stays behind other content */
 }
