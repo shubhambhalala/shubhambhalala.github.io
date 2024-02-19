@@ -91,9 +91,14 @@ nav ul li a {
 }
 
 /* Main Content */
-main {
-    background-color: rgba(255, 255, 255, 0.1); /* very transparent white */
+#main {
+    background-color: transparent; /* very transparent white */
     padding: 20px;
+    pointer-events: none;
+}
+
+.content-container {
+    pointer-events: auto; /* Re-enable pointer events for the content and image */
 }
 
 /* Footer */
@@ -168,4 +173,157 @@ footer span {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   z-index: -1; /* Ensure it stays behind other content */
+}
+
+#welcome {
+    font-size: 36px;
+    position: absolute;
+    left: 50px;
+}
+
+#dynamic-text {
+    font-size: 25px;
+}
+
+.highlight {
+    cursor: pointer; /* Change cursor on hover to indicate interactivity */
+    border-bottom: 2px solid transparent; /* Prepare for the underline effect */
+    transition: border-color 0.3s ease; /* Smooth transition for applying the underline */
+}
+
+.highlighted {
+    border-bottom: 2px solid red; /* Highlight with a red underline */
+}
+
+#bitmoji-container {
+    text-align: center; /* Center the Bitmoji in the container */
+    padding: 20px;
+    position: absolute;
+    right: 50px;
+}
+
+#bitmoji-container img {
+    width: 250px; /* Increase the width */
+    height: 250px; /* Increase the height to match the width */
+    border-radius: 50%; /* Keeps the image circular */
+    border: 4px solid #ffffff; /* Optionally adjusted the border thickness */
+    object-fit: cover; /* Ensures the image covers the frame */
+    display: block;
+    margin: auto; /* Center the image horizontally */
+}
+
+.news-ticker {
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */ /* Or any color that fits your design */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative; /* Add position relative */
+    z-index: 2; /* Ensure the ticker is above other content */
+    margin-bottom: 20px; /* Add space after the ticker */
+}
+
+.ticker-title {
+    padding: 10px;
+    background-color: #222; /* Darker background for the title */
+    font-weight: bold;
+    position: relative; /* Add position relative */
+    z-index: 1; /* Higher z-index so it's above the moving content */
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 20s linear infinite;
+    position: relative; /* Ensure positioning context */
+}
+
+.ticker-content a {
+    text-decoration: none;
+    color: #fff; /* Text color for links */
+    padding: 0 2em; /* Spacing between links */
+}
+
+/* Keyframes for ticker animation */
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+#social-media-icons {
+    display: flex;
+    position: absolute;
+    gap: 50px;
+    padding: 20px;
+    right: 85px;
+    margin-top: 275px;
+}
+
+.social-icon {
+    font-size: 24px; /* Adjust based on your preference */
+    opacity: 0; /* Start invisible */
+    animation: washAshore 3s ease forwards; /* Apply the animation */
+    color: white;
+}
+
+/* Define the keyframes for the animation */
+@keyframes washAshore {
+    0% {
+        transform: translateX(-100px) translateY(20px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Delay the animation for each icon */
+.social-icon:nth-child(1) { animation-delay: 0.5s; }
+.social-icon:nth-child(2) { animation-delay: 1s; }
+.social-icon:nth-child(3) { animation-delay: 1.5s; }
+
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 50px;
+    padding: 10px;
+    position: absolute;
+    top: 500px;
+    left: 50px;
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning of overlay text */
+    flex: 0 0 auto;
+    text-decoration: none;
+    border: 3px solid white; /* White border around images */
+    display: inline-block; /* Align items */
+}
+
+.image-container img {
+    display: block; /* Remove bottom margin/spacing */
+    width: 200px; /* Adjust based on your needs */
+    height: 200px;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0; /* Start at the bottom of the parent */
+    left: 0;
+    width: 100%; /* Cover the width of the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly gray background */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 10px 0; /* Padding for the text */
+    transition: transform 0.5s ease; /* Smooth transition for moving down */
+    transform: translateY(-100%); /* Hide initially by moving up */
+}
+
+.image-container:hover .overlay-text {
+    transform: translateY(0); /* Move down on hover */
 }

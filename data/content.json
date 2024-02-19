@@ -1,7 +1,6 @@
 {
     "home": {
-        "title": "Welcome to My Portfolio",
-        "description": "This is a brief introduction about myself."
+        "title": "Data Dreams, Delivered &#128161;"
     },
     "projects": [
         {
@@ -17,7 +16,6 @@
     ],
     "contact": {
         "email": "shubhambhalala@gmail.com",
-        "phone": "646-897-2751",
         "linkedin": "https://www.linkedin.com/in/shubhambhalala/"
     },
     "resume": "link-to-your-resume.pdf"
